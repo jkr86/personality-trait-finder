@@ -1,82 +1,38 @@
 import Head from 'next/head'
+import Link from "next/link"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>Personality trait</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <>
+          <div>
+            <div className="container mx-auto flex flex-col items-center py-12 sm:py-24 overflow-hidden">
+              <h1 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-bold leading-tight">Get to know your personality trait</h1>
+              <div className="relative">
+                <svg className="h-64 sm:h-auto w-full sm:w-auto sm:ml-40 sm:-mt-20" width={1202} height={630} xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fillRule="evenodd">
+                    <path d="M960 559.998c1.563.369 3.128.731 4.702 1.06 55.435 11.622 127.56-10.491 124.184-78.817-1.161-23.504-12.971-46.26-31.463-60.628-10.155-7.885-21.982-13.217-33.168-19.532C995.687 385.957 975.77 364.904 960 341v218.998" fill="#28445B" />
+                    <circle fill="#FBD38D" cx={889} cy={12} r={12} />
+                    <circle fill="#9AE6B4" cx={637} cy={618} r={12} />
+                    <path d="M968.754 94.323C943.386 54.064 890.111 49.805 843 59.5c-101.501 20.88-382.694-5.632-477.946 34.708-83.554 35.388-194.805 143.894-260.14 206.185-15.412 14.688 3.418 76.255 9.966 96.812C149.922 479.478 277.163 573.7 365.209 591c254.565 50.021 555.987-183.789 613.031-375.4 16.661-56.061 7.344-94.577-9.486-121.277z" fill="#FEEBC8" />
+                    <path fill="#9AE6B4" d="M41.505 81.79L30.55 121.93.44 88.49z" />
+                  </g>
+                </svg>
+                <img className="left-0 right-0 m-auto h-56 sm:h-auto w-4/5 sm:w-auto absolute sm:mt-10 sm:ml-56 top-0" src="https://cdn.tuk.dev/assets/hero_img1.jpg" alt="Hero Image" />
+              </div>
+              <Link href={'/quiz'}>
+                <button className="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm">Start Quiz</button>
+              </Link>
+            </div>
+          </div>
+        </>
       </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
-        </a>
-      </footer>
     </div>
   )
 }
