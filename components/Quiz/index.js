@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { data } from './data.json'
 import { fetchTrait } from './api'
+import Link from 'next/link'
 
 const Quiz = () => {
   const [step, setStep] = useState(1)
@@ -52,7 +53,7 @@ const Quiz = () => {
                     <fieldset id="group1">
                       {single.answers.map((answer, ind) => {
                         return (
-                          <li className='my-1' key={ind}>
+                          <li className="my-1" key={ind}>
                             <label className="flex items-center">
                               <input
                                 onChange={(e) =>
@@ -81,7 +82,15 @@ const Quiz = () => {
         {/* Results */}
         {step === 4 && <h2 className="text-center text-2xl">{trait}</h2>}
       </div>
-      {step !== 4 && (
+      {step === 4 ? (
+        <div className="flex h-12 w-full items-center justify-end rounded-b bg-gray-100 px-6">
+          <Link href="/">
+            <button className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600">
+              Home
+            </button>
+          </Link>
+        </div>
+      ) : (
         <div className="flex h-12 w-full items-center justify-between rounded-b bg-gray-100 px-6">
           <div>
             Question : <span>{`${step}/${questions.length}`}</span>
