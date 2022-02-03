@@ -4,6 +4,10 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 type Data = {
   message: string
 }
+type Element = {
+  answer: number
+  options: number
+}
 
 export default function handler(
   req: NextApiRequest,
@@ -23,7 +27,7 @@ export default function handler(
     })
   }
   let answersAverage = 0
-  answers.forEach((element) => {
+  answers.forEach((element: Element) => {
     answersAverage += element.answer / element.options
   })
   let average = answersAverage / answers.length

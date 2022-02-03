@@ -5,14 +5,6 @@ const headers = {
   },
 }
 export const fetchTrait = async (data) => {
-  // fetch('/api/calculate', { ...headers, body: JSON.stringify(data) })
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     return data
-  //   })
-  //   .catch((error) => {
-  //     return error
-  //   })
   let response = await fetch('/api/calculate', {
     ...headers,
     body: JSON.stringify(data),

@@ -34,7 +34,11 @@ const Quiz = () => {
 
   return (
     <div className="mb-8 mr-0 w-full rounded bg-white shadow sm:mb-0 sm:mr-8 sm:w-1/2">
-      <div className={`h-64 w-full rounded-t border-b border-gray-400 p-6 ${step===4&&"flex items-center justify-center"}`}>
+      <div
+        className={`h-64 w-full rounded-t border-b border-gray-400 p-6 ${
+          step === 4 && 'flex items-center justify-center'
+        }`}
+      >
         {/* Questions */}
         {questions.map((single, idx) => {
           return (
@@ -48,20 +52,22 @@ const Quiz = () => {
                     <fieldset id="group1">
                       {single.answers.map((answer, ind) => {
                         return (
-                          <li className="flex items-center" key={ind}>
-                            <input
-                              onChange={(e) =>
-                                handleChange({
-                                  question: single.id,
-                                  answer: answer.marks,
-                                  options: single.answers.length,
-                                })
-                              }
-                              type="radio"
-                              value={answer.text}
-                              name="group1"
-                            />
-                            <p className="ml-2">{answer.text}</p>
+                          <li className='my-1' key={ind}>
+                            <label className="flex items-center">
+                              <input
+                                onChange={(e) =>
+                                  handleChange({
+                                    question: single.id,
+                                    answer: answer.marks,
+                                    options: single.answers.length,
+                                  })
+                                }
+                                type="radio"
+                                value={answer.text}
+                                name="group1"
+                              />
+                              <span className="ml-2">{answer.text}</span>
+                            </label>
                           </li>
                         )
                       })}
@@ -73,7 +79,7 @@ const Quiz = () => {
           )
         })}
         {/* Results */}
-        {step === 4 && <h2 className='text-center text-2xl'>{trait}</h2>}
+        {step === 4 && <h2 className="text-center text-2xl">{trait}</h2>}
       </div>
       {step !== 4 && (
         <div className="flex h-12 w-full items-center justify-between rounded-b bg-gray-100 px-6">
